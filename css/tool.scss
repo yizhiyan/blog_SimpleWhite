@@ -1,0 +1,628 @@
+$t: 0.9;
+$f: "Microsoft YaHei", "微软雅黑", "Trebuchet MS", Arial, Verdana, Tahoma, sans-serif;
+$tool-lv: rgba(57, 225, 49, $t);
+$tool-lan: rgba(54, 201, 225, $t);
+$tool-hei: rgba(1, 1, 1, $t);
+$tool-hong: rgba(225, 20, 17, $t);
+$tool-zi: rgba(158, 65, 255, $t);
+$tool-huang: rgba(225, 176, 49, $t);
+$tool-hui: rgba(129, 129, 129, $t);
+
+$tool-nav-lv: rgb(73, 181, 61);
+$tool-nav-lan: rgb(66, 181, 181);
+$tool-nav-hei: rgb(1, 1, 1);
+$tool-nav-hong: rgb(181, 69, 57);
+$tool-nav-zi: rgb(171, 83, 181);
+$tool-nav-huang: rgb(225, 181, 49);
+
+*,.btn:not(:disabled):not(.disabled) {
+  cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADFklEQVRYhe3XTUhcVxjG8X8co5k4pmmab9IJMdJpCKE0UptuOsGQVRo3/UDcZFGwSKF7dwoDrgRRcDPTMYwYBgUXQTCrQglmYRaiIghKESIIIhc/quOMd+bJ4tx7nVgxYfRuSl44DAMD53efc8475wKcAAKWZd0BKoBK5/MkEADKnN/4VoFCofC3JOVyuZfj4+PfAWeAEHDKgfiH2NnZ+V2SZmdn5dbIyEgDcAn4FKjCJOIPwrbttCQ1Nzerr6/PQ/T09DwGrgMXMGn4g8hms39KUktLiwAPUSgUcrFY7EegBrjoGyKTycQlqbW1VYAAJRIJSVI+n99tb2//BbjpG+IgwD7ETltb20++ITKZTOIgAKD+/n7/EYcBAoGAh7Bte9sXxGEAF5FKpSRJu7u7/xYh3NNxtD7xPoCLGBwclNOsNhxEjYOoOhLiQwAuIp1OS5Ky2exaU1PTA0yfOAcEgXJfAS5ieHhYkmRZ1gzwJXCZd5fieAGhUEh1dXXeqK+v1+TkpCSpu7v7Z+Aa8Al7G/L4AZubm9pfq6urs8BXwOcOoPLYAF1dXYpGo9733t5eSdLS0tKb5eXlfyYmJp4D3wO3gauYf8+SE3inE3Z2dkqS0um0B4hEIpKktbW11XA4/BvwCPgWqOW/J6F0QEdHhxexbdsKh8MeYmxsTJI0Ojr6DHgIfA2EgbOY+AOUcgo2NjaeSNL09LQ3+cLCwl+SFIvFPEBjY6MkaXFx8TVwHxP/FaCaIzajilwu90qStra2Xg8NDf2aTCZbJGllZUXBYFCAotGotre3JUmRSKQB+AIT/+mSn96pciDoXMUuYnZ1zfr6+rgkpVIp79hJ0vz8/AugDriBaUKnKGXtiyqAiTCIaShngfPxePxePp/fcie2LGtmamrqKfANcAuz+0s/fkV1wkGUs3crDgLVAwMDd+fm5v5IJpM/ABFM56vFpPQZJv7Sdv8+gDvKnOGmchpzxs9jLqmXMctUfFk90vofhirDpFLpQELOqGLvuu5O7suVfX8i5UWj+IXF15cWF3LQ+Fgf6/9RbwH+K2y8Dp9kygAAAABJRU5ErkJggg=="), default;
+}
+
+a:hover, *[title],.btn:not(:disabled):not(.disabled){
+  cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEjklEQVRYhe2Wb0jcdRzHX+6089qtyytbw2WrGYz1INaRISsc1pAlXUnUg8FBA3NYlDQWGa2DHqRgSBI9CepBDxaFTDNGgXRk+SDSs4YjcjgQTdj4lZsw1J3efPfg+/3e7tSdN9giog98Hvx+v+/3+3n9Pv++H/iXye3A08CLQBXgA4r+CcNFwLPANKAs/QwIAiU3E6QIaHRGGxoaFIvF5PP5HEQfsA3w27VFwBPAu8C3wC/AV8Abds11e80HdAPq7OyUk97eXgWDQQdxGqgGngMGyfVStn4H7LQgmwoFKAE+BNTR0aFsGR8fVyQScYdPOUMVFRWKx+M6efKkksmkenp6VFlZ6db9BtQAAftzG4ofOAQoGAxqaGgoB+LSpUuqq6vL/GVHR4dSqZRWVla0uLio2dlZLS8v69y5c6qurnbr/gL2AJsLgfADO4AEoEAgoIGBgRyIVCqlaDSq2tranHfDw8OKx+MaGRlRKpXSwsKCGhsbHcQPwD3ArWwQjhJMkj0O/OQgVnsilUqpt7c383z58mX19fUJUH19vZLJpNLptDzPUyAQcBDPAFuBW/IB+IDbgF2YUhxxEIODg1ot8/PzSiaTmp6e1vnz59XV1SVA7e3tunjxoiQpkUg4gG577hbyVEaRJbwTE7fngSSgUCiksbGxHIDR0VEBOnz4sE6dOqWzZ8/qyJEjam9vl+d5kqSZmRkHMAa8YL1QnM8LRZhcuAt42EL8Cqi8vFz9/f0ZAM/zdOzYMQFqamrS5OSkPM+T53lKp9OZNVwtzRSmu25hgx6xHsRpQD6fLxOOK1euaGJiQkePHhWg0dHRNWFyHti3b5+D+NN6N8gGVeEgtgKPAt/bzQqHw5qampIkLS0t6cyZMzpx4oQuXLiwBsDlxcTEhKLRqIN4G9gOlObzgoMoxZYloKqqKjU3N2tmZiZjJJ1Oa3FxUSsrKznGZ2dnBaisrCwHBvjGeiFciBfeA1RZWanx8fE1f5hPuru7BSgajUqSjh8/7gBGgTqggg3Kshj4EVAikbgu49n3R09PjySppaXFAfQDUeB+6+FrSinwO7CmBCWTYNm6sLCgZDKpgwcPZjI/FotlwhEOh937jzB9ZifmnrimbAY+B1RTU6POzk7F43Ht378/+7B1NRQKqaurKwMbi8Xct0ngTeAAcC8m0fMC7LKb1jM0j7lslgH5/X5FIhG1trZmqkSS2tra3Pol4BPgZWAvBTSlUszlVG83DgM/A1/b527gA+AP1smTubm57Li7geYdTF/ZjWn7ecuwGLgDeAgzKb0CtAFvYaae14BXgQFsk4pEIhldFaZ+TEU12b/fhqmAgvpAOfAgUAs8BTQAT9qD9trnIdYP0zTwJdAOtNh992HCW9CktMmShiz1DqvbMa36bkyeHABagU8xifsF8DHwPsbtL1njD2BcX9CElO0JH2Ze8Fstse+KMSP8bgtxCBOa1y1QMybmj2HqPmT33LDJ2l3hYWtgDyYstZjB5hGMh7Zh3H5DjWdDFFsDZVwNzVYLFrSQm26G8dUgLlxOb7rR/+W/I38DqJ+FOjuXPTcAAAAASUVORK5CYII="), pointer;
+}
+
+@mixin tool-title($color:$tool-lv) {
+  display: inline-block;
+  line-height: 30px;
+  color: white;
+  background-color: $color;
+  font: 12px $f;
+  padding: 4px 8px;
+  border-radius: 4px;
+  position: absolute;
+  height: auto;
+  z-index: 9999;
+  &::before {
+    position: absolute;
+    display: block;
+    top: -10px;
+    left: 14px;
+    width: 0;
+    height: 0;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent $color transparent;
+    content: '';
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+/* tool-title*/
+.tool-title-lv {
+  @include tool-title($tool-lv);
+}
+
+.tool-title-lan {
+  @include tool-title($tool-lan);
+}
+
+.tool-title-hei {
+  @include tool-title($tool-hei);
+}
+
+.tool-title-hong {
+  @include tool-title($tool-hong);
+}
+
+.tool-title-zi {
+  @include tool-title($tool-zi);
+}
+
+.tool-title-huang {
+  @include tool-title($tool-huang);
+}
+
+.tool-title-hui {
+  @include tool-title($tool-hui);
+}
+
+/* panel */
+@mixin panel($bj:$tool-lv,$c:rgba(74,74,74,$t),$b:#ffffff) {
+  box-sizing: border-box;
+  min-width: 240px;
+  display: inline-block;
+  background-color: $bj;
+  border-radius: 4px;
+  color: $c;
+  border: 1px solid $b;
+  & *, & {
+    box-sizing: border-box;
+    font-family: $f;
+  }
+
+  .title {
+    line-height: 30px;
+    padding: 0 8px;
+    font-size: 14px;
+    border-bottom: 1px dashed $b;
+    font-weight: bold;
+    a, a:hover {
+      color: $c;
+    }
+    i {
+      display: inline-block;
+      padding: 0 8px 0 0;
+      margin: 0 8px 0 0;
+      border-right: 1px dashed $b;
+    }
+  }
+  .content {
+    font-size: 12px;
+    padding: 8px;
+  }
+  /*附加属性*/
+  &._bai, &._bai *, &._bai .title, &._bai .title a {
+    color: #ffffff;
+  }
+  &._hei, &._hei *, &._hei .title, &._hei .title a {
+    color: rgba(74, 74, 74, $t);
+  }
+  &._Solid .title {
+    border-bottom: 1px solid $b;
+    i {
+      border-right: 1px solid $b;
+    }
+  }
+}
+
+.panel-lv {
+  @include panel($tool-lv);
+}
+
+.panel-lan {
+  @include panel($tool-lan);
+}
+
+.panel-hei {
+  @include panel($tool-hei, #ffffff, #e2e2e2);
+}
+
+.panel-hong {
+  @include panel($tool-hong);
+}
+
+.panel-zi {
+  @include panel($tool-zi);
+}
+
+.panel-huang {
+  @include panel($tool-huang);
+}
+
+.panel-hui {
+  @include panel($tool-hui);
+}
+
+/* label */
+@mixin label($bj:$tool-lv,$color:#ffffff) {
+  background-color: $bj;
+  font: 10px $f;
+  color: $color;
+  position: relative;
+  height: 20px;
+  line-height: 20px;
+  display: inline-block;
+  margin: 0 0 0 20px;
+  padding: 0 4px;
+  &::before {
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent $bj transparent transparent;
+    content: "";
+  }
+  &::after {
+    display: block;
+    position: absolute;
+    left: -4px;
+    top: 8px;
+    content: '';
+    border-radius: 100%;
+    background-color: white;
+    height: 4px;
+    width: 4px;
+  }
+}
+
+.label-lv {
+  @include label($tool-lv);
+}
+
+.label-lan {
+  @include label($tool-lan);
+}
+
+.label-hei {
+  @include label($tool-hei);
+}
+
+.label-hong {
+  @include label($tool-hong);
+}
+
+.label-zi {
+  @include label($tool-zi);
+}
+
+.label-huang {
+  @include label($tool-huang);
+}
+
+.label-hui {
+  @include label($tool-hui);
+}
+
+/* 导航 */
+@mixin be() {
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  transition: all .3s;
+  top: -1px;
+}
+
+@mixin nav_1($bj:$tool-nav-lv) {
+  $height: 48px;
+  list-style-type: none;
+  background-color: $bj;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+  height: $height;
+  padding: 0 30px;
+  border-radius: 4px;
+  & *, & {
+    box-sizing: border-box;
+    font: 16px $f;
+    transition: all .5s;
+  }
+  a {
+    display: inline-block;
+  }
+  .logo {
+    flex-shrink: 0;
+    max-height: $height;
+    max-width: 120px;
+    overflow: hidden;
+    img {
+      max-width: 120px;
+    }
+    * {
+      font-size: 24px;
+      font-weight: bold;
+      color: rgb(247, 247, 249);
+      font-family: 楷体;
+    }
+  }
+  /*导航栏*/
+  ul {
+    & *, & {
+      box-sizing: border-box;
+      font: 15px $f;
+      transition: all .5s;
+    }
+    margin: 0;
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    & > li {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      &::before {
+        @include be();
+        content: '[';
+        left: -4px;
+      }
+      &::after {
+        @include be();
+        content: ']';
+        right: -4px;
+      }
+      &, * {
+        color: rgb(247, 247, 249);
+      }
+      & > a {
+        display: inline-block;
+      }
+      &.this {
+        & > a {
+          font-weight: bold;
+        }
+      }
+      &:hover, &.this {
+        * {
+          //color: $tool-lv;
+        }
+        &::before {
+          left: -10px;
+        }
+        &::after {
+          right: -10px;
+        }
+      }
+      &:hover {
+        & ol {
+          display: block;
+        }
+      }
+      width: 120px;
+      text-align: center;
+      display: inline-block;
+      padding: 0 6px;
+      position: relative;
+    }
+  }
+}
+
+.nav-t-lv {
+  @include nav_1($tool-nav-lv);
+}
+
+.nav-t-lan {
+  @include nav_1($tool-nav-lan);
+}
+
+.nav-t-hei {
+  @include nav_1($tool-nav-hei);
+}
+
+.nav-t-hong {
+  @include nav_1($tool-nav-hong);
+}
+
+.nav-t-zi {
+  @include nav_1($tool-nav-zi);
+}
+
+.nav-t-huang {
+  @include nav_1($tool-nav-huang);
+}
+
+/*--*/
+.nav-t1-lv {
+  @include nav_1($tool-lv);
+}
+
+.nav-t1-lan {
+  @include nav_1($tool-lan);
+}
+
+.nav-t1-hei {
+  @include nav_1($tool-hei);
+}
+
+.nav-t1-hong {
+  @include nav_1($tool-hong);
+}
+
+.nav-t1-zi {
+  @include nav_1($tool-zi);
+}
+
+.nav-t1-huang {
+  @include nav_1($tool-huang);
+}
+
+.nav-t1-hui {
+  @include nav_1($tool-hui);
+}
+
+/*水平线*/
+@mixin hr($color:$tool-lv) {
+  border: 0;
+  height: 1px;
+  background-color: $color;
+  margin: 2px auto;
+  //background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+@mixin hr_j($color:$tool-lv) {
+  border: 0;
+  height: 2px;
+  margin: 2px auto;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), $color, rgba(0, 0, 0, 0));
+}
+
+.hr-lv {
+  @include hr($tool-lv);
+}
+
+.hr-lan {
+  @include hr($tool-lan);
+}
+
+.hr-hei {
+  @include hr($tool-hei);
+}
+
+.hr-hong {
+  @include hr($tool-hong);
+}
+
+.hr-zi {
+  @include hr($tool-zi);
+}
+
+.hr-huang {
+  @include hr($tool-huang);
+}
+
+.hr-hui {
+  @include hr($tool-hui);
+}
+
+/* s */
+.hr-j-lv {
+  @include hr_j($tool-lv);
+}
+
+.hr-j-lan {
+  @include hr_j($tool-lan);
+}
+
+.hr-j-hei {
+  @include hr_j($tool-hei);
+}
+
+.hr-j-hong {
+  @include hr_j($tool-hong);
+}
+
+.hr-j-zi {
+  @include hr_j($tool-zi);
+}
+
+.hr-j-hui {
+  @include hr_j($tool-hui);
+}
+
+/* transition */
+@mixin tran($s:.5s) {
+  transition: all $s;
+}
+
+.trn-01 {
+  @include tran(.1s);
+}
+
+.trn-02 {
+  @include tran(.2s);
+}
+
+.trn-03 {
+  @include tran(.3s);
+}
+
+.trn-04 {
+  @include tran(.4s);
+}
+
+.trn-05 {
+  @include tran(.5s);
+}
+
+.trn-06 {
+  @include tran(.6s);
+}
+
+.trn-07 {
+  @include tran(.7s);
+}
+
+.trn-08 {
+  @include tran(.8s);
+}
+
+.trn-1 {
+  @include tran(1s);
+}
+
+.trn-2 {
+  @include tran(2s);
+}
+
+.trn-3 {
+  @include tran(3s);
+}
+
+.trn-4 {
+  @include tran(4s);
+}
+
+.trn-5 {
+  @include tran(5s);
+}
+
+.trn-6 {
+  @include tran(6s);
+}
+
+.trn-7 {
+  @include tran(7s);
+}
+
+.trn-8 {
+  @include tran(8s);
+}
+
+/* transition-all */
+@mixin tran($s:.5s) {
+  &, & * {
+    transition: all $s;
+  }
+}
+
+.trn-01-all {
+  @include tran(.1s);
+}
+
+.trn-02-all {
+  @include tran(.2s);
+}
+
+.trn-03-all {
+  @include tran(.3s);
+}
+
+.trn-04-all {
+  @include tran(.4s);
+}
+
+.trn-05-all {
+  @include tran(.5s);
+}
+
+.trn-06-all {
+  @include tran(.6s);
+}
+
+.trn-07-all {
+  @include tran(.7s);
+}
+
+.trn-08-all {
+  @include tran(.8s);
+}
+
+.trn-1-all {
+  @include tran(1s);
+}
+
+.trn-2-all {
+  @include tran(2s);
+}
+
+.trn-3-all {
+  @include tran(3s);
+}
+
+.trn-4-all {
+  @include tran(4s);
+}
+
+.trn-5-all {
+  @include tran(5s);
+}
+
+.trn-6-all {
+  @include tran(6s);
+}
+
+.trn-7-all {
+  @include tran(7s);
+}
+
+.trn-8-all {
+  @include tran(8s);
+}
+/* container */
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 760px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+
+
+
+

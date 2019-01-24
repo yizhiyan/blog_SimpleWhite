@@ -1,0 +1,46 @@
+@keyframes navToolShow{
+    0%{
+        transform:translate(0,20px);
+        opacity: 0;
+    }
+    100%{
+        transform:translate(0,0);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes navToolShow /* Firefox */
+{
+    0%{
+        transform:translate(0,20px);
+        opacity: 0;
+    }
+    100%{
+        transform:translate(0,0);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes navToolShow /* Safari 和 Chrome */
+{
+    0%{
+        transform:translate(0,20px);
+        opacity: 0;
+    }
+    100%{
+        transform:translate(0,0);
+        opacity: 1;
+    }
+}
+
+@-o-keyframes navToolShow /* Opera */
+{
+    0%{
+        transform:translate(0,20px);
+        opacity: 0;
+    }
+    100%{
+        transform:translate(0,0);
+        opacity: 1;
+    }
+}
